@@ -20,7 +20,7 @@ public class AviaSoulsTest {
         int expected = -1;
         int actual = ticket1.compareTo(ticket2);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class AviaSoulsTest {
         int expected = 1;
         int actual = ticket3.compareTo(ticket2);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -36,11 +36,11 @@ public class AviaSoulsTest {
         int expected = 0;
         int actual = ticket1.compareTo(ticket4);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void sort_ShouldSortPrice(){
+    public void sort_ShouldSortPrice() {
         AviaSouls avia = new AviaSouls();
         avia.add(ticket1);
         avia.add(ticket6);
@@ -50,11 +50,11 @@ public class AviaSoulsTest {
         Ticket[] expected = {ticket8, ticket1, ticket7, ticket6};
         Ticket[] result = avia.search("Сочи", "Москва");
 
-        Assertions.assertArrayEquals(expected,result);
+        Assertions.assertArrayEquals(expected, result);
     }
 
     @Test
-    public void sort_ShouldSortPrice_OneElement(){
+    public void sort_ShouldSortPrice_OneElement() {
         AviaSouls avia = new AviaSouls();
         avia.add(ticket1);
         avia.add(ticket5);
@@ -64,11 +64,11 @@ public class AviaSoulsTest {
         Ticket[] expected = {ticket3};
         Ticket[] result = avia.search("Сочи", "Красноярск");
 
-        Assertions.assertArrayEquals(expected,result);
+        Assertions.assertArrayEquals(expected, result);
     }
 
     @Test
-    public void sort_ShouldSortPrice_NotElement(){
+    public void sort_ShouldSortPrice_NotElement() {
         AviaSouls avia = new AviaSouls();
         avia.add(ticket1);
         avia.add(ticket5);
@@ -78,41 +78,41 @@ public class AviaSoulsTest {
         Ticket[] expected = {};
         Ticket[] result = avia.search("Сочи", "Калининград");
 
-        Assertions.assertArrayEquals(expected,result);
+        Assertions.assertArrayEquals(expected, result);
     }
 
     @Test
-    public void compare_TimeFlightFirstLessSecond(){
+    public void compare_TimeFlightFirstLessSecond() {
         TicketTimeComparator comparator = new TicketTimeComparator();
 
         int expected = -1;
         int actual = comparator.compare(ticket1, ticket5);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void compare_TimeFlightFirstMoreSecond(){
+    public void compare_TimeFlightFirstMoreSecond() {
         TicketTimeComparator comparator = new TicketTimeComparator();
 
         int expected = 1;
         int actual = comparator.compare(ticket5, ticket1);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void compare_TimeFlightFirstEqualSecond(){
+    public void compare_TimeFlightFirstEqualSecond() {
         TicketTimeComparator comparator = new TicketTimeComparator();
 
         int expected = 0;
         int actual = comparator.compare(ticket6, ticket1);
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void searchAndSortBy_shoulsSortTimeFlight(){
+    public void searchAndSortBy_shoulsSortTimeFlight() {
         AviaSouls avia = new AviaSouls();
         avia.add(ticket8);
         avia.add(ticket7);
@@ -124,7 +124,7 @@ public class AviaSoulsTest {
     }
 
     @Test
-    public void searchAndSortBy_shoulsSortTimeFlight_OneElement(){
+    public void searchAndSortBy_shoulsSortTimeFlight_OneElement() {
         AviaSouls avia = new AviaSouls();
         avia.add(ticket3);
         avia.add(ticket4);
@@ -136,7 +136,7 @@ public class AviaSoulsTest {
     }
 
     @Test
-    public void searchAndSortBy_shoulsSortTimeFlight_NotElement(){
+    public void searchAndSortBy_shoulsSortTimeFlight_NotElement() {
         AviaSouls avia = new AviaSouls();
         avia.add(ticket3);
         avia.add(ticket4);
